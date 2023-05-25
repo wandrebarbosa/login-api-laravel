@@ -1,18 +1,34 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import styles from './style'
 
 export default function SignIn() {
     return(
-        <View>
-            <Text>Login</Text>
-            <TextInput 
-            placeholder='Digite seu e-mail ou usuário'
-            />
+        <View style={styles.container}>
+            <View style={styles.containerHeader}>
+                <Text style={styles.message}>Seja Bem Vindo(a)!</Text>
+            </View> 
+            <View style={styles.containerForm}>
+                <Text style={styles.login}>Login</Text>
+                <TextInput
+                style={styles.input} 
+                placeholder='Digite seu e-mail ou usuário'
+                />
 
-            <Text>Senha</Text>
-            <TextInput 
-            placeholder='Digite sua senha'
-            />
+                <Text style={styles.login}>Senha</Text>
+                <TextInput 
+                style={styles.input}
+                placeholder='Digite sua senha'
+                />
+
+                <TouchableOpacity style={styles.buttonLogin}>
+                    <Text style={styles.buttonTextLogin}>Entrar</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.buttonRegister}>
+                    <Text style={styles.buttonTextRegister}>Não Possui Conta?</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
